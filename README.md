@@ -38,7 +38,7 @@ Facter for BMC Discovery
 mkdir -p /usr/tideway/bin-custom/
 wget https://raw.githubusercontent.com/mjaromi/tw_facter/master/tw_facter.py -O /usr/tideway/bin-custom/tw_facter.py
 chmod +x /usr/tideway/bin-custom/tw_facter.py
-ln -s /usr/tideway/bin-custom/tw_facter /usr/tideway/tw_facter 
+ln -s /usr/tideway/bin-custom/tw_facter /usr/tideway/bin/tw_facter
 ```
 
 # Create tw_facter user
