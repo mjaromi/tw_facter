@@ -680,5 +680,5 @@ def convert_to_list(file, remove=True):
     return array
 
 
-if __name__ == main():
+if __name__ == '__main__':
     sys.exit(main())
