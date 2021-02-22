@@ -3,7 +3,7 @@ Facter for BMC Discovery
 
 # Description
 
-`tw_facter` is a tool which provide facts about BMC Discovery Appliance in JSON format.
+`tw_facter` is a tool which provides facts about BMC Discovery Appliance in JSON format.
 
 `tw_facter` can provide following information:
 
