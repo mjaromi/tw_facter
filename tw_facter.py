@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
 # coding: utf-8
+__version__     = '0.0.2'
+__author__      = 'Mateusz Jaromi, mateusz.jaromi@gmail.com'
+__description__ = 'tw_facter is a tool which provides facts about BMC Discovery Appliance'
+
 import os
 import re
 import csv
@@ -14,7 +18,6 @@ from datetime import datetime
 sys.path.append('/usr/tideway/python/common/')
 import product
 
-TW_FACTER_VERSION = '0.0.1'
 
 if os.getenv('TW_FACTER_DRY_RUN'):
     try:
@@ -204,7 +207,7 @@ TW_CORES_SIZE = "du -h /usr/tideway/cores | awk '{print $1}'"
 
 
 def main(facts=None):
-    parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser(description=__description__, epilog='tw_facter v{}'.format(__version__))
 
     parser.add_argument('-d', '--dry', action='store_true', help='Dry run')
     parser.add_argument('-k', '--kind', default=['all'], choices=['appliance', 'cluster', 'custom', 'cores', 'discovery',
@@ -217,7 +220,7 @@ def main(facts=None):
     args = parser.parse_args()
 
     if args.version:
-        print('tw_facter v{}'.format(TW_FACTER_VERSION))
+        print('tw_facter v{}'.format(__version__))
     elif args.dry or dry_run():
         facts = tw_facts(args.kind)
         tw_facts_write(facts)
@@ -307,7 +310,7 @@ def env():
 
 
 def facter():
-    return {'version': TW_FACTER_VERSION,
+    return {'version': __version__,
             'id': os.getegid(),
             'gid': os.getuid()}
 
