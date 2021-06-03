@@ -55,7 +55,7 @@ chown tideway.tideway ${tw_facter_passwd_file}
 ```bash
 wget -q https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux64 -O /usr/tideway/bin-custom/jq
 chmod +x /usr/tideway/bin-custom/jq
-ln -s /usr/tideway/bin-custom/jq /usr/tideway/jq
+ln -s /usr/tideway/bin-custom/jq /usr/tideway/bin/jq
 ```
 
 # Usage
